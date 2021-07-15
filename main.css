@@ -17,7 +17,7 @@ html {
 	color: var(--text);
 }
 
-@media (prefers-color-scheme:){
+@media (prefers-color-scheme: dark){
 		:root {
 			color-scheme:dark;
 			--back: black;
