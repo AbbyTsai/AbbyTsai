@@ -3,8 +3,6 @@
 	--color-pink: pink;
 	--color-red: red;
 	--color-darkgray: darkgray;
-	--back: white;
-	--text: black;
 }
 
 * {
@@ -17,13 +15,13 @@ html {
 	color: var(--text);
 }
 
-@media (prefers-color-scheme:){
-		:root {
-			color-scheme:dark;
-			--back: black;
-			--text: white;
-			}
-		}
+@media (prefers-color-scheme:dark){
+	:root {
+		color-scheme:dark;
+		--back: black;
+		--text: white;
+}
+}
 
 [color-scheme="light"]{
 		color-scheme:light;
@@ -67,7 +65,7 @@ input {
 	text-align: center;
 	height: 2em;
 	width: 8em;
-	justify-content: center;
+	justify-content: flex-end;
 	right: 0;
 	align-items: center;
 	z-index: 3;
@@ -107,16 +105,14 @@ input {
 }
 
 #main {
-	display: grid;
-	grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
-	grid-template-rows: repeat(auto-fill,minmax(350px,1fr));
+	display: grid;	
 }
 
 .logo_head {
 	position: fixed;
 	right: 0;
 	bottom: 0;
-	padding-right: 1em;
+	padding-right: 0.25em;
 }
 
 .logo_head:hover {
@@ -174,11 +170,12 @@ input {
 
 #blog {
 	display: grid;
-	gap: 1em;
+	gap: 1.5em;
 	padding: 2em;
-	padding-bottom: 3em;
-	grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
-	grid-template-rows: repeat(auto-fill, minmax(300px,1fr));
+	padding-bottom: 4em;
+	border-bottom: 10px solid var(--color-darkgray);
+	border-radius: 100px;
+	margin-bottom: 4em;
 }
 
 #blog article {
@@ -190,6 +187,7 @@ input {
 
 #blog article:hover {
 	transform: scale(1.03);
+	box-shadow: 5px 5px var(--color-darkgray);
 }
 
 #about {
@@ -208,6 +206,7 @@ input {
 .content {
 	height: minmax(250px, 500px);
 	border: 5px solid var(--color-darkgray);
+	margin-bottom: 1.5em;
 }
 
 .content:nth-child(odd) {
@@ -237,7 +236,7 @@ input {
 	height: 2em;
 	text-align: center;
 	text-shadow: 1px 1px var(--back);
-	color: var(--text);
+	color: black;
 }
 .book {
 	margin-top: 2em;
@@ -245,6 +244,7 @@ input {
 
 #about button {
 	background: var(--color-red);
+	box-shadow: 2px 5px var(--color-darkgray);
 	border-radius: 50%;
 	height: 50px;
 	width: 120px;
@@ -254,13 +254,24 @@ input {
 	text-decoration: none;
 	font-weight: bolder;
 	font-size: 24px;
+	color: var(--back);
 }
 
 #about button:hover {
-	transform: scale(1.1);
+	transform: translateY(3px);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
+#main {
+	grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+	grid-template-rows: repeat(auto-fill,minmax(300px,1fr));
+}
+
+#blog {
+	grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+	grid-template-rows: repeat(auto-fill, minmax(300px,1fr));
+}
+
 .header {
 	background: var(--color-pink);
 }
@@ -317,17 +328,101 @@ input {
 	display: none;
 }
 
-#menu:target {
+#menu:target, #menu:focus {
+	display: block;	
+}
+
+#about  p {
+	font-size: 18px;
+}
+}
+
+@media (min-width: 376px) and (max-width: 769px) {
+#main {
+	grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+	grid-template-rows: repeat(auto-fill,minmax(450px,1fr));
+}
+
+#blog {
+	grid-template-columns: repeat(auto-fill, minmax(330px,1fr));
+	grid-template-rows: repeat(auto-fill, minmax(450px,1fr));
+}
+
+.header {
+	background: var(--color-pink);
+}
+
+#logo {
+	position: absolute;
+	right: 47%;
+}
+
+#toggle span {
+	display: block;
+	height: 4px;
+	width: 25px;
+	background: black;
+	margin: 5px;
+	right: 0;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	background: var(--color-pink);
+}
+
+.close span:first-child {
+	transform: rotate(-40deg) translate(-6.5px,6.5px) ;
+}
+
+.close span:nth-child(2) {
+	visibility: hidden;
+}
+
+.close span:last-child {
+	transform: rotate(40deg) translate(-6.5px,-6.5px);
+}
+
+.home, .blog, .about {
+	padding: 1em;
+}
+
+.menu {
+	width: 100vw;
+	height: 12em;
+    background: var(--color-pink);
+    text-align: center;
+}
+
+#menu a {
+	text-shadow: 1px 1px var(--back);
+	color: black;
+}
+
+#menu {
+	display: none;
+}
+
+#menu:target , #menu:focus {
 	display: block;	
 }
 
 #about  p {
 	font-size: 24px;
 }
-
 }
 
-@media screen and (min-width: 769px ) {
+@media screen and (min-width: 770px ) {
+#main {
+	grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+	grid-template-rows: repeat(auto-fill,minmax(450px,1fr));
+}
+#blog {
+	grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+	grid-template-rows: repeat(auto-fill, minmax(450px,1fr));
+}
+
 #logo {
 	grid-column: 1/2;
 }
