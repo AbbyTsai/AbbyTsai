@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="/AbbyTsai/css/blog.css">
+    
+</head>
+<body>
+    <div id="card">
+        <div id="logo"><img src="/AbbyTsai/img/abby.png" alt="" height="50" width="65"></div>
+        <div id="mainImg_2"><img src="" alt=""></div>
+        <div id="tableContent">
+                <button id="shareButton" class="mainbutton" onclick="share()">share</button>
+                <button id="openButton" class="mainbutton"><a href="#menu"><<<</a></button>
+    <div id="menu">
+        <button id="openButton" class="mainbutton"><a href="#">>>></a></button>
+        <div><h3>Table of Content</h3></div>
+        <div><a href="#part1"><p>what and why:<br> responsive web design</p></a></div>
+        <div><a href="#part2"><p>demo in HTML&CSS</p></a></div>
+        <div><a href="#part3"><p>next:device</p></a></div>
+    </div>
+    </div>
+        <div id="container">
+            <h1>Oops! I put a big menu into a small button, Responsively!</h1>
+            <h5>Jan 15, 2022</h5>
+        
+            <div id="content">
+                <h2 id="part1">what and why: responsive web design</h2>
+            <p>Simple may be a beautiful thing, even in web development, too. </p>
+            <p>
+The evolution of viewport from big to small screen makes the technology of layout design progress toward simplicity. 
+It is called responsive web design, RWD, 
+which responds to a diverse screen by different layouts and purpose to bring simple jobs to developers.  </p>
+
+        
+            <h3 id="part2">how: demo in HTML & CSS</h3>
+
+            <p>
+            Here’s the demo on a menu with responsive web design.</p>
+            <p>
+
+We’ll try to do it through a stylesheet of media queries.
+Let’s start off the design on a small screen. 
+It may help us figure out the most important feature within the limit screen. </p>
+<p>
+First, under the HTML header, in the meta element, set viewpoint width equal to device-width. Without it, the full content is difficult to read as a result of smaller content. </p>
+<code class="codeSection">
+    <span><</span>
+    <span>meta name="viewport" content="width=device-width, initial-scale=1.0"</span>
+    <span>></span>
+</code>
+
+Next, Design a button.
+Set a go to menu button with a tag to link to the menu. 
+Here I put 3 greater than mark as a open icon.
+
+<code class="codeSection">
+    <span><</span>button<span>></span>
+    <span><</span>a href="#menu"<span>></span> <<<
+    <span><</span>/a<span>></span>
+    <span><</span>/button<span>></span>
+</code>
+
+<p>
+    Also, give it some color and circle shape by border-radius to 50%.
+    then,  set the position fixed at right top.
+    That means when the page’s scrolled, the button is at the same place. 
+</p>
+<code class="codeSection">
+    button {<br>
+        <span class=attr>background: lightpink;</span><br>
+        <span class=attr>height:6em;</span><br>      
+        <span class=attr>width:6em;</span><br>      
+        <span class=attr>position:fixed;</span><br>     
+        <span class=attr>border-radius:50%;</span><br>     
+        <span class=attr>right:1em;</span><br>      
+        <span class=attr>top:2em;</span><br>
+        } <br>
+</code>
+
+<p>
+Next, build a menu.
+Put features in div tag and given an id name with the menu, here has blog, about and contact. Then set a return button with a tag to link back to the main page. 
+I put a 3 less than mark as a close icon.
+</p>
+
+<code class="codeSection">
+    <span><</span>button<span>></span>
+    <span><</span>a href="#"<span></span> >>>
+    <span><</span>/a<span>></span>
+    <span><</span>/button<span>></span><br>
+    <span><</span>div<span>></span>blog<span><</span>div<span>></span><br>
+    <span><</span>div<span>></span>about<span><</span>div<span>></span><br>
+    <span><</span>div<span>></span>contact<span><</span>div<span>></span><br>
+</code>
+<p>
+    Also, give menu some color and position.
+Here we  set background to pink, and give it a full page fixed view 
+by width, height up to 100 viewport. 
+For typography, give text-align at center, line-hight to 5em.
+
+</p>
+<code class="codeSection">
+    button {<br>
+        <span class=attr>background: pink;</span><br>
+        <span class=attr>height:100vh;</span><br>      
+        <span class=attr>width:100vw;</span><br>      
+        <span class=attr>position:fixed;</span><br>     
+        <span class=attr>border-radius:50%;</span><br>     
+        <span class=attr>text-align:center;</span><br>      
+        <span class=attr>line-height:5em;</span><br>
+        } <br>
+
+</code>
+
+<p>
+    Next, the magic  is coming!
+As the menu would only display 
+when the button of go to menu is clicked, 
+so, let’s set magic display value with none to hide the menu. 
+Then in a pseudo class <code>:target</code> and <code>:focus</code>, 
+set display value with block to show the element 
+when it gets focus. 
+
+</p>
+<code class="codeSection">
+    #menu {<br>
+    <span class="attr">display: none;</span><br>
+    } <br>
+    #menu:target, #menu:focus {<br>
+    <span class="attr">display: block;</span><br>
+    }
+
+</code>
+
+<p>
+ That’s it. The mobile layout is ready.   
+</p>
+
+<p>
+Then, The most fun part, Responsive design.
+</p>
+<p>
+Here, We tend to respond to 3 different screens, one for mobile, another for tablet, then for desktop. Let’s use <code>@media</code> to set the breakpoint in small, medium, and large screens to 480px, and 821px. The at-rule is only applied when the media type and condition both match. 
+That means if the screen is lower than 480px, the menu will be hidden behind the button as described above.
+</p>
+<p>
+In other words,
+If the screen is between 481-821px, then the menu aims to be on the right side. 
+We try to set display property to flex, then, flex-direction decides the direction of items.
+here set property to column as the menu will be in the right area.
+Also, give it width and height to  35 and 100 viewport. 
+Meanwhile, set a button with none display, 
+as the menu is already on the screen.
+
+</p>
+<code class="codeSection">
+    @media (min-width: 481px) and (max-width: 821px){<br>
+    button {<br>
+    <span  class="attr">display: none;</span><br>
+    }<br>
+    #menu {<br>
+    <span  class="attr">display: flex;</span><br>
+    <span  class="attr">flex-direction: column;</span><br>
+    }<br>
+    }
+
+</code>
+
+<p>
+Otherwise,  the screen is higher than 822px.
+as we set the property to row, the menu just lies on the top screen alone.
+We also give it width and height to 100 and 35 viewport, 
+as opposed to tablets.
+</p>
+<code class="codeSection">
+    @media screen and (min-width: 822px ) {<br>
+    button {<br>
+    <span  class="attr">display: none;</span><br>
+    }<br>
+    #menu {<br>
+    <span class="attr">display: flex;</span><br>
+    <span class="attr">flex-direction: row;</span><br>
+    }<br>
+
+</code>
+<p>Wow! Cool, that’s it.
+Does it look more clear than it was? I love it.</p>       
+
+<h3 id="part3">next:device</h3>
+<p>
+     Next, in media queries level 5 specification, the viewport in separate displays (e.g.:foldable mobile) seems to come by the feature of horizontal-viewport-segments, vertical-viewport-segments. 
+    That means the media query could set different conditions depending on multiple segments. 
+     Woo! How exciting is it? Hope seeing them soon with browser compatibility. ya!
+</p>
+
+</div>
+</div>
+        
+    </div>
+    <div id="return">
+        <button><a href="/AbbyTsai/index.html">return</a></button>
+    </div>
+<div class="footer">copyright2022 @AbbyTsai - made with Thanks!</div>
+<script>
+    const sharedata={
+				title:'hello',
+				text:'here',
+				url:'https://twitter.com/AbbyPTsai'
+	}
+		
+	function share(){
+		try{
+			navigator.share(sharedata);
+			
+			} catch(e){
+				console.log='error:'+e;
+	}
+	}
+</script>
+
+</body>
+</html>
