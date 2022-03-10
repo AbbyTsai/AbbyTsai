@@ -286,6 +286,9 @@ input {
 	background: repeating-linear-gradient(white 1em, pink 2em, lightgray 2em);
 }
 
+#container h5 {
+	margin-top: 1em;
+}
 
 @media screen and (max-width: 375px) {
 #main {
