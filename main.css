@@ -278,7 +278,7 @@ input {
 
 #mainImg_2 {
 	height: 8em;
-	background:repeating-radial-gradient(ellipse farthest-corner at 10px 10px, pink 10px 20px, transparent 20px 30px ,lightblue 30px 40px, transparent 40px 50px, pink 50px 55px),repeating-radial-gradient(ellipse closest-corner at 1000px 100px, transparent 10px 20px, pink 20px 30px, lightblue 30px 60px);
+	background:repeating-radial-gradient(ellipse farthest-corner at 10% 50%, lightpink 10% 20%, transparent 20% 30% ,pink 30% 40%, transparent 40% 50%, lightpink 50% 55%),repeating-radial-gradient(ellipse closest-corner at 10% 50%, transparent 10% 20%, lightpink 20% 30%, lightblue 30% 50%, gray 50% 53%);
 }
 
 #mainImg_1{
