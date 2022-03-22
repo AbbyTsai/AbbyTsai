@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    
+</head>
+<body>
+    <div id="card">
+        <div id="logo"><img src="/img/abby.png" alt="" height="50" width="65"></div>
+        <div id="mainImg_3"><img src="" alt=""></div>
+        <div id="tableContent">
+                <button id="shareButton" class="mainbutton" onclick="share()">share</button>
+                <button id="openButton" class="mainbutton"><a href="#menu"><<<</a></button>
+    <div id="menu">
+        <button id="openButton" class="mainbutton"><a href="#">>>></a></button>
+        <div><h3>Table of Content</h3></div>
+        <div><a href="#part1"><p>Walking on the beach</p></a></div>
+        <div><a href="#part2"><p>Communication</p></a></div>
+        <div><a href="#part3"><p>Oldest message from sea</p></a></div>
+        <div><a href="#part4"><p>Another legend? </p></a></div>
+    </div>
+    </div>
+        <div id="container">
+            <h1>A Legend bottle IN message</h1>
+            <h5>Mar 20, 2022</h5>
+        
+            <div id="content">
+                <h2 id="part1">Walking on the beach</h2>
+            <p>It was a sunny day after heavy rain. 
+                We went walking on the beach. <br>
+                What’s that? <br>
+                Incredibly,💢 <br>
+                is it a bottle in message from the sea?
+                
+            </p>
+   
+            <h3 id="part2">Communication</h3>
+
+            <p>
+                Thanks to the digital world, communication is easier than it was.<br>
+                Communication may be a kind of art, everyone has their own unique style.<br>
+                What is the principle of good communication?<br>
+                It might depend on the character of two-side,<br> 
+                as words may be managed by 
+                both emotion and brain. <br>
+                In the meantime, compassion is our best friend in communication.
+                
+            </p>                
+       
+
+<h3 id="part3">Oldest message from sea</h3>
+<p>
+    Are you curious what the age of the oldest message in the bottle is?<br>
+    Amazingly, 132 years, from 1886 to 2018.  <br>
+
+    The message was a German experiment in which scientists of the 19th century<br> 
+    aimed to understand the fastest shipping routes, <br>
+    according to <a href="https://www.museum.wa.gov.au/maritime-archaeology-db/sites/default/files/ma_report_325_paula_bottle_message_020318_0.pdf">
+    a maritime report of Western Australian Museum. 
+</a>
+ 
+</p>
+
+<h3 id="part4">Another legend? </h3>
+<p>
+    Back to now, in front of us, 
+    What's the thing inside the bottle?<br>
+    Is it another legend message?<br>
+    Or <br>
+    a hidden treasure map?<br>
+    Or<br>
+    a best wish card?<br>
+    Or<br>
+    ......<br>
+    Come on, guys, let’s be the angel for the little bottle.<br>
+    Open it up!<br>
+    <br><br><br><br><br>
+    Lovely loud laughs are found.<br>
+    Happy smiles.
+    <br>
+</p>
+</div>
+</div>
+        
+    </div>
+    <div id="return">
+        <button><a href="/index.html">return</a></button>
+    </div>
+    <div class="footer">copyright2022 @AbbyTsai - made with Thanks!</div>
+
+<script>
+    const sharedata={
+				title:'hello',
+				text:'here',
+				url:'https://abbytsai.github.io/blog/blog20220101.html'
+	}
+		
+	function share(){
+		try{
+			navigator.share(sharedata);
+			
+			} catch(e){
+				console.log='error:'+e;
+	}
+	}
+</script>
+
+</body>
+</html>

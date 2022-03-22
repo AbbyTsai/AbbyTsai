@@ -8,15 +8,19 @@
     place-items: center;
 }
 
-#mainImg_1 {
+#mainImg_2 {
 	height: 8em;
-	background: repeating-linear-gradient(white 1em, pink 2em, lightgray 2em);
+	background:repeating-radial-gradient(ellipse farthest-corner at 10px 10px, pink 10px 20px, transparent 20px 30px ,lightblue 30px 40px, transparent 40px 50px, pink 50px 55px),repeating-radial-gradient(ellipse closest-corner at 1000px 100px, transparent 10px 20px, pink 20px 30px, lightblue 30px 60px);
 }
 
-#mainImg_2{
+#mainImg_1{
 	height: 8em;
-	
-    background:repeating-radial-gradient(white 4em, pink 6em);
+	background: repeating-conic-gradient(lightblue 10deg 15deg, transparent 15deg 20deg, lightblue 20deg 25deg,pink 25deg 30deg),repeating-radial-gradient(5px, lightblue 10px, pink 15px 20px, transparent 20px 30px, lightblue 30px 40px,pink 40px 50px);
+}
+
+#mainImg_3{
+	height: 8em;
+	background: repeating-linear-gradient(44deg, transparent 10px, lightblue 10px 20px, transparent 20px 30px, orange 30px 40px,transparent 40px 50px),repeating-linear-gradient(-44deg, transparent 10px, lightblue 10px 20px, transparent 20px 30px, orange 30px 40px,transparent 40px 50px);
 }
 
 #container{
